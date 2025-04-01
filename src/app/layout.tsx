@@ -1,3 +1,4 @@
+import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +13,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body>{children}</body>
+		<html lang="en" suppressHydrationWarning>
+			<body>
+				<Provider>{children}</Provider>
+			</body>
 		</html>
 	);
 }
